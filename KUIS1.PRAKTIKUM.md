@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil dan Jadwal</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('123.png'); 
+            background-size: cover;
+            background-position: center; 
+            background-attachment: fixed; 
+        }
+        .navbar {
+            background-color: rgba(89, 70, 88, 0.867);
+            overflow: hidden;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+        }
+        .navbar a {
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+            padding: 14px 20px;
+            display: block;
+        }
+        .navbar a:hover {
+            background-color: #ffb6c1;
+            border-radius: 5px;
+        }
+        .container {
+            padding: 20px;
+            text-align: center;
+            display: none;
+        }
+        .active {
+            display: block;
+        }
+        .profile-box {
+            width: 50%;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: #ffb6c1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            overflow: hidden;
+        }
+        .profile-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+        table {
+            width: 80%;
+            margin: auto;
+            border-collapse: collapse;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 15px;
+            text-align: center;
+            font-size: 16px;
+        }
+        th {
+            background-color: #ffb6c1;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#home" onclick="showPage('home')"><b>Home</b></a>
+        <a href="#profil" onclick="showPage('profil')"><b>Biodata</b></a>
+        <a href="#jadwal" onclick="showPage('jadwal')"><b>Jadwal</b></a>
+    </div>
+    
+    <div id="home" class="container active">
+        <h2>Selamat Datang di Website Saya</h2>
+        <p>Website ini berisi biodata dan jadwal perkuliahan saya.</p>
+    </div>
+
+    <div id="profil" class="container">
+        <div class="profile-box">
+            <h2>Profil Pengguna</h2>
+            <div class="profile-img">
+                <img id="profilePicture" src="inifoto.jpg" alt="Tambahkan Foto">
+            </div>
+            <p><b>Nama: Azmii Haniifah</b></p>
+            <p><b>NPM: 2317051028</b></p>
+            <p><b>Jurusan: Ilmu Komputer</b></p>
+            <p><b>Universitas: Universitas Lampung</b></p>
+        </div>
+    </div>
+    
+    <div id="jadwal" class="container">
+        <h2>Jadwal Kelas B</h2>
+        <table>
+            <tr>
+                <th rowspan="2">Jam</th>
+                <th colspan="5">Hari</th>
+            </tr>
+            <tr>
+                <th>Senin</th>
+                <th>Selasa</th>
+                <th>Rabu</th>
+                <th>Kamis</th>
+                <th>Jumat</th>
+            </tr>
+            <tr>
+                <td>07:30 - 08.40</td>
+                <td></td>
+                <td>PDT</td>
+                <td>PEMWEB</td>
+                <td></td>
+                <td>ML RESP</td>
+            </tr>
+            <tr>
+                <td>08:50 - 10.00</td>
+                <td>ADSI</td>
+                <td>PEMDEK</td>
+                <td></td>
+                <td>PEMWEB</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>10:10 - 11.20</td>
+                <td>AI</td>
+                <td>PEMDEK RESP</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>12:30 - 13.40</td>
+                <td>TI</td>
+                <td>ML</td>
+                <td>TAM</td>
+                <td>ADSI</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>13:50 - 15.00</td>
+                <td>AI RESP</td>
+                <td>TAM RESP</td>
+                <td></td>
+                <td>PDT RESP</td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        function showPage(page) {
+            var pages = document.querySelectorAll('.container');
+            pages.forEach(function(p) {
+                p.classList.remove('active');
+            });
+            document.getElementById(page).classList.add('active');
+        }
+    </script>
+</body>
+</html>
